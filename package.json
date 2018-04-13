@@ -1,0 +1,14 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "freeCodeCamp challenge to display weather with API",
+  "main": "index.html",
+  "scripts": {
+    "start": "browser-sync start --server --files \"index.html\""
+  },
+  "author": "Victor",
+  "license": "ISC",
+  "dependencies": {
+    "mdbootstrap": "^4.5.0"
+  }
+}
