@@ -11,9 +11,13 @@ function weather() {
     location.innerHTML = '';
 
     $.getJSON(url + 'api/current?lon=' + longitude + '&lat=' + latitude, function(data) {
+      let fahrenheit = Math.floor(9 / 5 * data.main.temp + 32);
+      let min = Math.floor(9 / 5 * data.main.temp_min + 32);
+      let max = Math.floor(9 / 5 * data.main.temp_max + 32);
+
       $('<img src="' + data.weather[0].icon +'">').appendTo($('#icon'));
-      $('#temp').html(data.main.temp + '° F');
-      $('#minMax').html('min: ' + data.main.temp_min + '° F' + ' - ' + 'max: ' + data.main.temp_max + '° F');
+      $('#temp').html(fahrenheit + '°f');
+      $('#minMax').html('min: ' + min + '°f' + ' - ' + 'max: ' + max + '°f');
       $('#description').html(data.weather[0].description);
       console.log(data);
     });
